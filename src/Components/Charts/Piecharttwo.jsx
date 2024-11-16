@@ -1,0 +1,43 @@
+import { PieChart } from "recharts";
+import { Pie } from "recharts";
+
+import React from 'react'
+
+const Piecharttwo = () => {
+
+      const data1 = [
+        {
+          name: "Page A",
+          uv: 4000,
+          pv: 2400,
+        }
+      ];
+  return (
+    <div>
+
+      <PieChart width={200} height={250}>
+        <defs>
+          <linearGradient id="gradient1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="yellow" />
+            <stop offset="100%" stopColor="green" />
+          </linearGradient>
+        </defs>
+        <Pie
+          data={data1}
+          dataKey="uv"
+          nameKey="name"
+          cx="50%"
+          cy="50%"
+          innerRadius={85}
+          outerRadius={100}
+          fill="url(#gradient1)"
+          stroke="none"
+        />
+      </PieChart>
+      
+      
+    </div>
+  )
+}
+
+export default Piecharttwo
